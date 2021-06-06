@@ -1,0 +1,5 @@
+name: Shield
+main: io.github.plugin.Shield.Shield
+version: 1.16
+api-version: 1.16
+author: RANK0816
