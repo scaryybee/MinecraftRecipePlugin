@@ -1,6 +1,6 @@
 # ReMake Add-Recipe
 name: Add-Recipe
-main: io.github.rank.plugin.addrecipe.AddRecipePlugin
+main: io.github.rank.plugin.recipe.RecipePlugin
 version: 1.17.1
 api-version: 1.17
 author: ASR
