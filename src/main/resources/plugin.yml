@@ -1,5 +1,5 @@
 # ReMake Add-Recipe
-name: Add-Recipe
+name: Recipe
 main: io.github.rank.plugin.recipe.RecipePlugin
 version: 1.17.1
 api-version: 1.17
