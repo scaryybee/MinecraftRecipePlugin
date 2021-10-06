@@ -1,26 +1,26 @@
-// 마인크래프트 플러그인 Gradle
 plugins {
-    kotlin("jvm") version "1.4.32"
+    kotlin("jvm") version "1.5.31"
     id("com.github.johnrengelman.shadow") version "6.1.0"
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+group = properties["group"]!!
+version = properties["version"]!!
 
 repositories {
     mavenCentral()
     maven("https://papermc.io/repo/repository/maven-public/")
 }
 
-
 dependencies {
     implementation(kotlin("stdlib"))
-    compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
+    implementation("net.projecttl:InventoryGUI-api:4.1.5")
+
+    compileOnly("io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT")
 }
 
 tasks {
     compileKotlin {
-        kotlinOptions.jvmTarget = "11" // JDK 버전
+        kotlinOptions.jvmTarget = "16"
     }
 
     shadowJar {
