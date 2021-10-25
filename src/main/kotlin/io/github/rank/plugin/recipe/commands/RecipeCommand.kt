@@ -21,7 +21,7 @@ class RecipeCommand(private val plugin: AddRecipePlugin) : CommandExecutor, TabC
                 when (args[0]) {
                     "add" -> sender.openAddRecipeGUI(plugin)
 
-                    "list" -> sender.openRecipeList(plugin, 1)
+//                    "list" -> sender.openRecipeList(plugin, 1)
 
                     "reload" -> plugin.reloadRecipe()
 
@@ -46,7 +46,7 @@ class RecipeCommand(private val plugin: AddRecipePlugin) : CommandExecutor, TabC
             when (args.size) {
                 1 -> {
                     commandList.add("add")
-                    commandList.add("list")
+//                    commandList.add("list")
                     commandList.add("reload")
                     commandList.add("unload")
                     commandList.add("load")
