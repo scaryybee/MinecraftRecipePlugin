@@ -1,9 +1,5 @@
-package io.github.rank.plugin.recipe.util
+package io.github.asr.recipe.util
 
-import io.github.rank.plugin.recipe.itemStack
-import io.github.rank.plugin.recipe.number
-import io.github.rank.plugin.recipe.recipeConfig
-import io.github.rank.plugin.recipe.recipeResult
 import net.kyori.adventure.text.Component
 import net.projecttl.inventory.gui.gui
 import net.projecttl.inventory.gui.utils.InventoryType

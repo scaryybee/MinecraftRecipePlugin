@@ -1,6 +1,5 @@
-package io.github.rank.plugin.recipe.util
+package io.github.asr.recipe.util
 
-import io.github.rank.plugin.recipe.*
 import net.kyori.adventure.text.Component
 import net.projecttl.inventory.gui.gui
 import net.projecttl.inventory.gui.utils.InventoryType
@@ -95,6 +94,8 @@ private fun Player.openAddRecipeGUIVer1(plugin: Plugin) {
 
             number++
 
+            this@openAddRecipeGUIVer1.closeInventory()
+
             recipeConfig.save(recipeListFile)
         }
     }
@@ -151,6 +152,8 @@ private fun Player.openAddRecipeGUIVer2(plugin: Plugin) {
             number++
 
             recipeConfig.save(recipeListFile)
+
+            this@openAddRecipeGUIVer2.closeInventory()
         }
     }
 }
@@ -202,6 +205,8 @@ private fun Player.openAddRecipeGUIVer3(plugin: Plugin) {
                     number++
 
                     recipeConfig.save(recipeListFile)
+
+                    this@openAddRecipeGUIVer3.closeInventory()
 
                     return@slot
                 }
@@ -256,6 +261,8 @@ private fun Player.openAddRecipeGUIVerShapeless(plugin: Plugin) {
                     number++
 
                     recipeConfig.save(recipeListFile)
+
+                    this@openAddRecipeGUIVerShapeless.closeInventory()
 
                     return@slot
                 }

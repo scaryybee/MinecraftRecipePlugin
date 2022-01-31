@@ -1,6 +1,5 @@
-package io.github.rank.plugin.recipe
+package io.github.asr.recipe.util
 
-import io.github.rank.plugin.recipe.commands.RecipeCommand
 import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.NamespacedKey
@@ -9,7 +8,6 @@ import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.ShapedRecipe
 import org.bukkit.inventory.ShapelessRecipe
 import org.bukkit.plugin.Plugin
-import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
 
 val recipeList = listOf(2, 3, 4, 11, 12, 13, 20, 21, 22) // Basic 3 X 3
@@ -28,7 +26,8 @@ fun Plugin.loadRecipe() {
     for (i in 0 until number) {
         when (recipeConfig.getInt("$i.type")) {
             1 -> {
-                val recipe = ShapedRecipe(NamespacedKey(this, "add-recipe"),
+                val recipe = ShapedRecipe(
+                    NamespacedKey(this, "add-recipe"),
                     recipeConfig.itemStack("$i.result")).shape("a")
                     .setIngredient('a', recipeConfig.itemStack("$i.recipe.0"))
 
@@ -36,7 +35,8 @@ fun Plugin.loadRecipe() {
             }
 
             2 -> {
-                val recipe = ShapedRecipe(NamespacedKey(this, "add-recipe"),
+                val recipe = ShapedRecipe(
+                    NamespacedKey(this, "add-recipe"),
                     recipeConfig.itemStack("$i.result")).shape("ab", "cd")
                     .setIngredient('a', recipeConfig.itemStack("$i.recipe.0"))
                     .setIngredient('b', recipeConfig.itemStack("$i.recipe.1"))
@@ -47,7 +47,8 @@ fun Plugin.loadRecipe() {
             }
 
             3 -> {
-                val recipe = ShapedRecipe(NamespacedKey(this, "add-recipe"),
+                val recipe = ShapedRecipe(
+                    NamespacedKey(this, "add-recipe"),
                     recipeConfig.itemStack("$i.result")).shape("abc", "def", "ghi")
                     .setIngredient('a', recipeConfig.itemStack("$i.recipe.0"))
                     .setIngredient('b', recipeConfig.itemStack("$i.recipe.1"))
@@ -63,7 +64,8 @@ fun Plugin.loadRecipe() {
             }
 
             4 -> {
-                val recipe = ShapelessRecipe(NamespacedKey(this, "add-recipe"),
+                val recipe = ShapelessRecipe(
+                    NamespacedKey(this, "add-recipe"),
                     recipeConfig.itemStack("$i.result"))
                     .addIngredient(recipeConfig.itemStack("$i.recipe.0"))
                     .addIngredient(recipeConfig.itemStack("$i.recipe.1"))
@@ -96,33 +98,4 @@ fun Plugin.reloadRecipe() {
     loadRecipe()
 
     logger.info("${ChatColor.GREEN}Recipe Reloaded Successful!")
-}
-
-class AddRecipePlugin : JavaPlugin() {
-    override fun onEnable() {
-        try {
-            if (!recipeListFile.exists()) {
-                recipeConfig.save(recipeListFile)
-            }
-            recipeConfig.load(recipeListFile)
-        } catch (localException: Exception) {
-            localException.printStackTrace()
-        }
-        if (recipeConfig.isSet("number")) number = recipeConfig.getInt("number")
-        else recipeConfig.set("number", 0)
-
-        server.getPluginCommand("recipe")?.apply {
-            setExecutor(RecipeCommand(this@AddRecipePlugin))
-            tabCompleter = RecipeCommand(this@AddRecipePlugin)
-        }
-
-        // loadRecipe()
-    }
-
-    override fun onDisable() {
-        recipeConfig.set("number", number)
-        recipeConfig.save(recipeListFile)
-
-        // unloadRecipe()
-    }
 }

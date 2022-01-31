@@ -1,18 +1,17 @@
-package io.github.rank.plugin.recipe.commands
+package io.github.asr.recipe.commands
 
-import io.github.rank.plugin.recipe.AddRecipePlugin
-import io.github.rank.plugin.recipe.loadRecipe
-import io.github.rank.plugin.recipe.reloadRecipe
-import io.github.rank.plugin.recipe.unloadRecipe
-import io.github.rank.plugin.recipe.util.openAddRecipeGUI
-import io.github.rank.plugin.recipe.util.openRecipeList
+import io.github.asr.recipe.util.loadRecipe
+import io.github.asr.recipe.util.reloadRecipe
+import io.github.asr.recipe.util.unloadRecipe
+import io.github.asr.recipe.RecipePlugin
+import io.github.asr.recipe.util.openAddRecipeGUI
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.command.TabCompleter
 import org.bukkit.entity.Player
 
-class RecipeCommand(private val plugin: AddRecipePlugin) : CommandExecutor, TabCompleter {
+class RecipeCommand(private val plugin: RecipePlugin) : CommandExecutor, TabCompleter {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if (sender !is Player) return false
 
