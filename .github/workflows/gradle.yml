@@ -11,11 +11,7 @@ on:
   push:
     branches: [ master ]
     tags:
-      - "v*"
-  pull_request:
-    branches: [ master ]
-    tags:
-      - "v*"
+      - "*"
 
 permissions:
   contents: read
@@ -40,7 +36,6 @@ jobs:
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: ${{ github.ref }}
-        prerelease: true
+        automatic_release_tag: "latest"
         title: "Minecraft Recipe Plugin ${{ github.ref }}"
         files: build\libs\Add-Recipe.jar
