@@ -36,5 +36,6 @@ jobs:
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        title: "Minecraft Recipe Plugin ${{ github.ref }}"
+        title: "Minecraft Recipe Plugin"
+        automatic_release_tag: latest
         files: build\libs\Add-Recipe.jar
