@@ -143,10 +143,10 @@ private fun Player.openAddRecipeGUIVer2(plugin: Plugin) {
 
             val type = 2
             recipeConfig.set("$number.type", type)
-            recipeConfig.set("$number.recipe.0", inv.item(recipeList[1]))
-            recipeConfig.set("$number.recipe.1", inv.item(recipeList[2]))
-            recipeConfig.set("$number.recipe.2", inv.item(recipeList[4]))
-            recipeConfig.set("$number.recipe.3", inv.item(recipeList[5]))
+            recipeConfig.set("$number.recipe.0", inv.item(recipeList[0]))
+            recipeConfig.set("$number.recipe.1", inv.item(recipeList[1]))
+            recipeConfig.set("$number.recipe.2", inv.item(recipeList[3]))
+            recipeConfig.set("$number.recipe.3", inv.item(recipeList[4]))
             recipeConfig.set("$number.result", inv.item(recipeResult))
 
             number++
