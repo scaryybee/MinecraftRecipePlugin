@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   build:
-
+    permissions: write-all
     runs-on: windows-latest
 
     steps:
@@ -38,4 +38,4 @@ jobs:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         title: "Minecraft Recipe Plugin"
         automatic_release_tag: latest
-        files: build\libs\Add-Recipe.jar
+        files: build/libs/Add-Recipe.jar
