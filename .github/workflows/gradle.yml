@@ -31,11 +31,12 @@ jobs:
     - name: Build with Gradle
       uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
       with:
-        arguments: build
+        arguments: shadowJar
     - name: Create a Release
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         title: "Minecraft Recipe Plugin"
+        prerelease: false
         automatic_release_tag: latest
-        files: build/libs/Add-Recipe.jar
+        files: build/libs/Add-Recipe-all.jar
