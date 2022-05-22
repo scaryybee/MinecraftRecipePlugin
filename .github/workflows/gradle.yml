@@ -23,7 +23,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up JDK 11
+    - name: Set up JDK
       uses: actions/setup-java@v3
       with:
         java-version: '17'
@@ -33,9 +33,10 @@ jobs:
       with:
         arguments: build
     - name: Create a Release
-      uses: 1fxe/GitHub-Release-Action@v1.0.2
+      uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        release_token: ${{ secrets.RELEASE_TOKEN }}
-        release_tag: last
-        release_title: Minecraft Recipe Plugin
-        release_file: build\libs\Add-Recipe.jar
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Minecraft Recipe Plugin Latest"
+        files: build\libs\Add-Recipe.jar
