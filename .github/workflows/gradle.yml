@@ -33,10 +33,11 @@ jobs:
       with:
         arguments: build
     - name: list file
-      run: ls
+      run: cd build\libs && ls
     - name: Create a Release
       uses: 1fxe/GitHub-Release-Action@v1.0.2
       with:
         release_token: ${{ secrets.RELEASE_TOKEN }}
         release_tag: last
         release_title: Minecraft Recipe Plugin
+        release_file: build\libs\*
