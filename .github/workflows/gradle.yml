@@ -32,6 +32,8 @@ jobs:
       uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
       with:
         arguments: build
+    - name: list file
+      run: ls
     - name: Create a Release
       uses: 1fxe/GitHub-Release-Action@v1.0.2
       with:
