@@ -41,4 +41,4 @@ jobs:
         title: "Minecraft Recipe Plugin"
         prerelease: false
         automatic_release_tag: latest
-        files: build/libs/Add-Recipe-all.jar
+        files: build/libs/Add-Recipe.jar
