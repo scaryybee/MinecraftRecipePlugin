@@ -15,7 +15,7 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation("net.projecttl:InventoryGUI-api:4.1.5")
 
-    compileOnly("io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
 }
 
 tasks {
