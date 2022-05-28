@@ -1,5 +1,6 @@
 # Minecraft Recipe Plugin
 - Remake Version of [Add Recipe](https://github.com/AtSignRANK/Add-Recipe)
+- 유의 사항 : 플러그인이 로드되면 `/recipe:recipe load` 를 쳐야함. 귀찮으면 플긴 메인에서 로드하는거 ㅈ주석을 풀고 풀리퀘를 거세요.
 
 ## How do I use it?
 - Download Plugin Jar from Release
